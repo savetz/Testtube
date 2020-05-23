@@ -1,0 +1,88 @@
+1 REM TESTTUBE by Kay Savetz, circa 1988. All of the ATASCII characters in this
+2 REM will be unreadable in this ASCII listing, sorry.
+10 REM TESTTUBE
+20 REM by Kevin Komix
+30 REM --------------
+40 CREDITS=1000:REM †~Œ’Õ¬≈“†œ∆†∆œœƒ”‘¡Õ–”†–Ã¡Ÿ≈“†»¡”Æ†«≈‘†“…ƒ†œ∆†‘»…”†Ã…Œ≈†∆œ“†‘»≈†¬¬”†–“œ«“¡ÕÆ
+50 POKE 82,0:REM ¥∞ √œÃ’ÕŒ”...
+100 DIM OUT$(162),IN$(1),TUBE$(142),INV$(162),PRICE(7):I=0
+102 PRICE(1)=10:PRICE(2)=3:PRICE(3)=10:PRICE(4)=1:PRICE(5)=5:PRICE(6)=2:PRICE(7)=15
+105 TUBE$="SODIUM BENZOID      TRIMOTHILATE        PROTESTITATE        SODIUM PHOSPHATE    CARBONIC ACID        "
+106 C=LEN(TUBE$):TUBE$(C,C+40)="DILITHIUM CARBINATE LEAD SULPHATE       "
+110 OUT$="}  çççç††††‘≈”‘‘’¬≈††††çççç":GOSUB 1000
+120 OUT$="  ||":FOR D=1 TO 9:GOSUB 1000:NEXT D
+130 OUT$=" ":GOSUB 1000
+140 OUT$="":GOSUB 1000
+150 OUT$="":GOSUB 1000
+160 FOR D=56 TO 49 STEP -1:OUT$="ñ_":OUT$(7,7)=CHR$(D):OUT$(8,12)="  ":GOSUB 1000:NEXT D
+170 OUT$="ïïïïï":GOSUB 1000
+180 OUT$="Buy:":GOSUB 1000
+190 OUT$="A) SODIUM BENZOID [10]":GOSUB 1000
+200 OUT$="B) TRIMOTHILATE [3]":GOSUB 1000
+210 OUT$="C) PROTESTITATE [10]":GOSUB 1000
+220 OUT$="D) SODIUM PHOSPHATE [1]":GOSUB 1000
+230 OUT$="E) CARBONIC ACID [5]":GOSUB 1000
+240 OUT$="F) DILITHIUM CARBINATE [2]":GOSUB 1000
+250 OUT$="G) LEAD SULPHATE [15]":GOSUB 1000
+260 OUT$=" ":GOSUB 1000
+265 FOR E=1 TO 8
+270 OUT$="Your test tube contains:":GOSUB 1000
+280 IF INV$="" THEN OUT$="NOTHING!":GOSUB 1000:GOTO 350
+290 OUT$=INV$:GOSUB 1000
+300 IF LEN(INV$)>20 THEN OUT$="":GOSUB 1000:IF LEN(INV$)>60 THEN OUT$="":GOSUB 1000
+310 IF LEN(INV$)>100 THEN OUT$="":GOSUB 1000
+350 FOR D=1 TO 398:NEXT D:OUT$="What to buy?             ":GOSUB 1000:OUT$="úúúúú":GOSUB 1000:GOSUB 2000
+355 IF C<65 OR C>71 THEN GOSUB 2000:GOTO 355
+360 OUT$="":OUT$(19,39)=TUBE$((C-64)*20-19,(C-64)*20):GOSUB 1000
+365 OUT$="":FOR D=1 TO E+2:F=LEN(OUT$)+1:OUT$(F,F)="":NEXT D:F=LEN(OUT$)+1:OUT$(F,F+9)="_çíé"
+366 FOR D=1 TO E+1:F=LEN(OUT$)+1:OUT$(F,F)="":NEXT D:GOSUB 1000:F=LEN(OUT$)+1:OUT$(F,F+9)="_çíé"
+370 INV=LEN(INV$)+1:INV$(INV,INV+20)=TUBE$((C-64)*20-19,(C-64)*20):CREDITS=CREDITS-PRICE(C-64)
+371 IF C=65 THEN I=I+1
+372 IF C=66 THEN I=I+10
+373 IF C=67 THEN I=I+100
+374 IF C=68 THEN I=I+1000
+375 IF C=69 THEN I=I+10000
+376 IF C=70 THEN I=I+100000
+377 IF C=71 THEN I=I+1000000
+380 OUT$="                               ":GOSUB 1000:OUT$="":GOSUB 1000:NEXT E
+390 OUT$="Your test tube contains:":GOSUB 1000:OUT$=INV$:GOSUB 1000:OUT$="...and is full.":GOSUB 1000
+400 FOR D=1 TO 400:NEXT D
+410 OUT$="}               ":GOSUB 1000
+411 OUT$="               ñ_çíé":GOSUB 1000
+412 OUT$="               ñ_çíé":GOSUB 1000
+413 OUT$="               ñ_çíé":GOSUB 1000
+414 OUT$="               ñ_çíé":GOSUB 1000
+415 OUT$="               ñ_çíé":GOSUB 1000
+416 OUT$="               ñ_çíé":GOSUB 1000
+417 OUT$="               ñ_çíé":GOSUB 1000
+418 OUT$="               ñ_çíé":GOSUB 1000
+419 OUT$="               ïïïïï":GOSUB 1000
+420 OUT$="":GOSUB 1000:OUT$=INV$:GOSUB 1000
+430 OUT$="Now, let's drop a FoodStamp in to the   test tube, to begin the chain           reaction...":GOSUB 1000
+435 FOR D=1 TO 250:NEXT D
+440 OUT$="":GOSUB 1000
+450 OUT$="      ":FOR D=1 TO 10:C=LEN(OUT$)+1:OUT$(C,C+4)=" ":NEXT D:GOSUB 1000
+460 OUT$="ˇˇˇˇˇˇˇˇˇˇˇ  ":GOSUB 1000
+465 FOR D=1 TO 3
+470 OUT$="{{{{{{":GOSUB 1000
+480 OUT$="":GOSUB 1000
+490 OUT$="
+
+äàäà
+
+äàäà":GOSUB 1000
+500 OUT$="":GOSUB 1000
+510 NEXT D
+520 OUT$="úúúú":GOSUB 1000
+530 OUT$="YOUR EXPERIMENT IS A...":GOSUB 1000
+540 FOR D=1 TO 100:NEXT D
+550 IF I=8 THEN OUT$="†”’√√≈””°†Congrads! You win 500 F.S.'s!":GOSUB 1000:END :REM †¬¡√À†‘œ†‘»≈†¬¬”°°††††††††††
+555 REM †…Œ†‘»≈†¡¬œ÷≈†Ã…Œ≈¨†√»¡Œ«≈†‘»≈† " I = 8 " –¡“‘†‘œ†“≈∆Ã≈√‘†ƒ…∆∆ß‘†Õ≈ƒ…√…Œ≈†√œÕ¬…Œ¡‘…œŒ”Æ†”≈≈†Ã…Œ≈”†≥∑±†‘»“’†≥∑∑†
+560 OUT$="†∆¡…Ã’“≈°† Sorry, Doctor. Guess you're  not the high-tech alchemest you thought you were!":GOSUB 1000
+570 END :REM †††¬¡√À†‘œ†‘»≈†Õ¡…Œ†¬¬”††ÆÆ
+1000 ? OUT$:RETURN 
+1001 REM ††–“…Œ‘†‘œ†Õœƒ≈Õ†“œ’‘…Œ≈†
+2000 CLOSE #1:OPEN #1,4,0,"K:":GET #1,C:IN$=CHR$(C):RETURN 
+2001 REM ††…Œ–’‘†∆“œÕ†Õœƒ≈Õ†“œ’‘…Œ≈†
+2002 REM †œŒÃŸ†«≈‘†œŒ≈†Ã≈‘‘≈“¨†¡†‘»“’
+2003 REM †«ÆÆÆ†††
